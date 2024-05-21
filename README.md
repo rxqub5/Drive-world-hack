@@ -4,7 +4,7 @@ local GUI = Library:Create{
     Name = "Quý hói hub",
     Size = UDim2.fromOffset(600, 400),
     Theme = Library.Themes.Serika,
-    Link = "https://github.com/deeeity/mercury-lib](https://github.com/rxqub5"
+    Link = "https://github.com/rxqub5"
 }
 
 local Main = GUI:tab{
@@ -310,10 +310,10 @@ task.spawn(function()
 end)
 
 GUI:Credit{
-    Name = "x3Fall3nAngel",
-    Description = "Made the script",
+    Name = "rxqub5",
+    Description = "làm ra script",
     V3rm = "https://v3rmillion.net/member.php?action=profile&uid=2270329",
     Discord = "https://discord.gg/b9QX5rnkT5"
 }
 
-GUI:set_status("Status | Active")
+GUI:set_status("trạng thái | hoạt động")
