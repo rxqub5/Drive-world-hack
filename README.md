@@ -1,10 +1,10 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/rxqub5/Drive-world-hack/main/README.md"))()
+local Library = loadstring(game:HttpGet(""))()
 
 local GUI = Library:Create{
-    Name = "Quý hói hub",
+    Name = "Mercury",
     Size = UDim2.fromOffset(600, 400),
     Theme = Library.Themes.Serika,
-    Link = "https://github.com/rxqub5"
+    Link = "https://github.com/deeeity/mercury-lib"
 }
 
 local Main = GUI:tab{
@@ -71,9 +71,9 @@ end
 
 
 Main:Toggle({
-    Name = "tự động giao hàng",
+    Name = "Auto Delivery Truck",
 	StartingState = false,
-    Description = "Dùng Full-E để đc nhiều tiền nhất",
+    Description = "Use Full-E or Casper for more money(work in USA map only)",
 	Callback = function(state)
         Driveworld["autodelivery"] = state
     end
@@ -310,10 +310,10 @@ task.spawn(function()
 end)
 
 GUI:Credit{
-    Name = "rxqub5",
-    Description = "làm ra script",
+    Name = "x3Fall3nAngel",
+    Description = "Made the script",
     V3rm = "https://v3rmillion.net/member.php?action=profile&uid=2270329",
     Discord = "https://discord.gg/b9QX5rnkT5"
 }
 
-GUI:set_status("trạng thái | hoạt động")
+GUI:set_status("Status | Active")
