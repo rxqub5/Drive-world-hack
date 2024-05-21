@@ -1,4 +1,4 @@
-local Library = https://raw.githubusercontent.com/rxqub5/Drive-world-hack/main/README.md"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/rxqub5/Drive-world-hack/main/README.md"))()
 
 local GUI = Library:Create{
     Name = "Quý hói hub",
