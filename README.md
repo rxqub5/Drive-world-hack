@@ -1,4 +1,4 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/rxqub5/Drive-world-hack/main/README.md"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/x3fall3nangel/mercury-lib-edit/master/src.lua"))()
 
 local GUI = Library:Create{
     Name = "Quý Lộc HUB",
