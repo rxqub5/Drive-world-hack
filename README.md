@@ -1,10 +1,10 @@
-local Library = loadstring(game:HttpGet(""))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/rxqub5/Drive-world-hack/main/README.md"))()
 
 local GUI = Library:Create{
-    Name = "Mercury",
+    Name = "Quý Lộc HUB",
     Size = UDim2.fromOffset(600, 400),
     Theme = Library.Themes.Serika,
-    Link = "https://github.com/deeeity/mercury-lib"
+    Link = "https://github.com/rxqub5"
 }
 
 local Main = GUI:tab{
@@ -71,28 +71,28 @@ end
 
 
 Main:Toggle({
-    Name = "Auto Delivery Truck",
+    Name = "tự động giao hàng",
 	StartingState = false,
-    Description = "Use Full-E or Casper for more money(work in USA map only)",
+    Description = "Dùng Full-E để đc nhiều tiền nhất)",
 	Callback = function(state)
         Driveworld["autodelivery"] = state
     end
 })
 
 Main:Dropdown{
-    Name = "Select Material",
-    StartingText = "Select...",
+    Name = "chọn vật liệu",
+    StartingText = "chọn...",
     Description = nil,
-    Items = {"Wood", "Steel"},
+    Items = {"gỗ", "thép"},
     Callback = function(item)
         material = item
     end
 }
 
 Main:Toggle({
-    Name = "Auto Delivery Material",
+    Name = "tự động vật chuyển vật liệu",
 	StartingState = false,
-    Description = "wait 25 sec",
+    Description = "chờ 25 giây",
 	Callback = function(state)
         Driveworld["autodeliverymaterial"] = state
         if state == false then
