@@ -4,7 +4,7 @@ local GUI = Library:Create{
     Name = "Quý Lộc HUB",
     Size = UDim2.fromOffset(600, 400),
     Theme = Library.Themes.Serika,
-    Link = "https://github.com/rxqub5"
+    Link = "https://github.com/deeeity/rxqub5"
 }
 
 local Main = GUI:tab{
@@ -33,6 +33,15 @@ for i,v in pairs(getconnections(Players.LocalPlayer.Idled)) do
         v["Disconnect"](v)
     end
 end
+
+local old
+old = hookmetamethod(game, "__namecall", newcclosure(function(self, ...)
+    if not checkcaller() and getnamecallmethod() == "InvokeServer" and self.Name == "QuitJob" and Driveworld["autodelivery"] then
+        print("haha")
+        return wait(9e99)
+    end
+    return old(self, ...)
+end))
 
 local function getchar()
     return lp.Character or lp.CharacterAdded:Wait()
@@ -69,11 +78,10 @@ local function spawnvehicle()
     end
 end
 
-
 Main:Toggle({
     Name = "tự động giao hàng",
 	StartingState = false,
-    Description = "Dùng Full-E để đc nhiều tiền nhất)",
+    Description = "Dùng Full-E để đc nhiều tiền nhất",
 	Callback = function(state)
         Driveworld["autodelivery"] = state
     end
@@ -207,7 +215,7 @@ task.spawn(function()
                     ReplicatedStorage:WaitForChild("Systems"):WaitForChild("Jobs"):WaitForChild("StartJob"):InvokeServer(workspace:WaitForChild("Jobs"):WaitForChild("Trucking"),workspace:WaitForChild("Jobs"):WaitForChild("Trucking"):WaitForChild("StartPoints"):WaitForChild("Logs"))
                 end
             until jobDistance and tonumber(jobDistance) >= 2.1 or Driveworld["autodelivery"] == false
-            for i = 1, 10 do
+            for i = 1, 40 do
                 if not Driveworld["autodelivery"] or not getvehicle() or not getchar() or isvehicle() == false or job.Visible == false then
                     break
                 end
@@ -216,7 +224,7 @@ task.spawn(function()
             if workspace:FindFirstChild("CompletionRegion") and workspace:FindFirstChild("CompletionRegion"):FindFirstChild("Primary") then
                 getvehicle():SetPrimaryPartCFrame(workspace:FindFirstChild("CompletionRegion"):FindFirstChild("Primary").CFrame * CFrame.new(0,3,0))
             end
-            task.wait(1)
+            task.wait(.25)
             Systems:WaitForChild("Jobs"):WaitForChild("CompleteJob"):InvokeServer()
             task.wait(.5)
             if lp.PlayerGui.JobComplete.Enabled == true then
@@ -310,7 +318,7 @@ task.spawn(function()
 end)
 
 GUI:Credit{
-    Name = "x3Fall3nAngel",
+    Name = "rxqub5",
     Description = "Made the script",
     V3rm = "https://v3rmillion.net/member.php?action=profile&uid=2270329",
     Discord = "https://discord.gg/b9QX5rnkT5"
